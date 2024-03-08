@@ -1,0 +1,13 @@
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Client\bin\Debug\Client.exe.config
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Client\bin\Debug\Client.exe
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Client\bin\Debug\Client.pdb
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Client\obj\Debug\Client.Login.resources
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Client\obj\Debug\Client.csproj.GenerateResource.cache
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Client\obj\Debug\Client.exe
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Client\obj\Debug\Client.pdb
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Client\obj\Debug\Client.Register.resources
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Client\obj\Debug\Client.UserDashboard.resources
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Client\obj\Debug\Client.ChatRoom.resources

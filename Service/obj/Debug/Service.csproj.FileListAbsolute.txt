@@ -1,0 +1,7 @@
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Service\bin\Debug\Service.dll.config
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Service\bin\Debug\Service.dll
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Service\bin\Debug\Service.pdb
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Service\obj\Debug\Service.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Service\obj\Debug\Service.dll
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Service\obj\Debug\Service.pdb

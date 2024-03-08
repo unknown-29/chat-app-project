@@ -1,0 +1,14 @@
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Host\bin\Debug\Host.exe.config
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Host\bin\Debug\Host.exe
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Host\bin\Debug\Host.pdb
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Host\bin\Debug\Service.dll
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Host\bin\Debug\Service.pdb
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Host\bin\Debug\Service.dll.config
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Host\obj\Debug\Host.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Host\obj\Debug\Host.Host.resources
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Host\obj\Debug\Host.Properties.Resources.resources
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Host\obj\Debug\Host.csproj.GenerateResource.cache
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Host\obj\Debug\Host.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Host\obj\Debug\Host.csproj.CopyComplete
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Host\obj\Debug\Host.exe
+C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Host\obj\Debug\Host.pdb
