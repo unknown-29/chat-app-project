@@ -11,9 +11,11 @@ namespace Service
     public interface IUsersService
     {
         [OperationContract] string Login(string username, string password);
+        [OperationContract] void Logout(string username);
         [OperationContract] bool Register(string username, string password);
         [OperationContract] IEnumerable<Users> GetAllUsers();
         [OperationContract] IEnumerable<Users> SearchUsers(string username);
         [OperationContract] Users FindUser(string username);
+        [OperationContract] string GetUserStatus(string username);
     }
 }

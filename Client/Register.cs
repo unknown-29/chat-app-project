@@ -19,6 +19,7 @@ namespace Client
 
         private void Register_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (MySession.Username != null && MySession.Username.Length != 0) MySession.UsersService.Logout(MySession.Username);
             Application.Exit();
         }
 

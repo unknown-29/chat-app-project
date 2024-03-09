@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -12,6 +13,8 @@ namespace Service
     {
         [DataMember] public string Username { get; set; }
         [DataMember] public string Password { get; set; }
+        [DataMember] public DateTime LastSeen { get; set; }
+        [DataMember] public bool IsOnline { get; set; }
     }
     /*
      CREATE TABLE [dbo].[Users] (

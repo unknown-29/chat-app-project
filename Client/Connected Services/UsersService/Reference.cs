@@ -23,6 +23,12 @@ namespace Client.UsersService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsOnlineField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastSeenField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PasswordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -35,6 +41,32 @@ namespace Client.UsersService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsOnline {
+            get {
+                return this.IsOnlineField;
+            }
+            set {
+                if ((this.IsOnlineField.Equals(value) != true)) {
+                    this.IsOnlineField = value;
+                    this.RaisePropertyChanged("IsOnline");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastSeen {
+            get {
+                return this.LastSeenField;
+            }
+            set {
+                if ((this.LastSeenField.Equals(value) != true)) {
+                    this.LastSeenField = value;
+                    this.RaisePropertyChanged("LastSeen");
+                }
             }
         }
         
@@ -84,6 +116,12 @@ namespace Client.UsersService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/Login", ReplyAction="http://tempuri.org/IUsersService/LoginResponse")]
         System.Threading.Tasks.Task<string> LoginAsync(string username, string password);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/Logout", ReplyAction="http://tempuri.org/IUsersService/LogoutResponse")]
+        void Logout(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/Logout", ReplyAction="http://tempuri.org/IUsersService/LogoutResponse")]
+        System.Threading.Tasks.Task LogoutAsync(string username);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/Register", ReplyAction="http://tempuri.org/IUsersService/RegisterResponse")]
         bool Register(string username, string password);
         
@@ -107,6 +145,12 @@ namespace Client.UsersService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/FindUser", ReplyAction="http://tempuri.org/IUsersService/FindUserResponse")]
         System.Threading.Tasks.Task<Client.UsersService.Users> FindUserAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/GetUserStatus", ReplyAction="http://tempuri.org/IUsersService/GetUserStatusResponse")]
+        string GetUserStatus(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/GetUserStatus", ReplyAction="http://tempuri.org/IUsersService/GetUserStatusResponse")]
+        System.Threading.Tasks.Task<string> GetUserStatusAsync(string username);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -144,6 +188,14 @@ namespace Client.UsersService {
             return base.Channel.LoginAsync(username, password);
         }
         
+        public void Logout(string username) {
+            base.Channel.Logout(username);
+        }
+        
+        public System.Threading.Tasks.Task LogoutAsync(string username) {
+            return base.Channel.LogoutAsync(username);
+        }
+        
         public bool Register(string username, string password) {
             return base.Channel.Register(username, password);
         }
@@ -174,6 +226,14 @@ namespace Client.UsersService {
         
         public System.Threading.Tasks.Task<Client.UsersService.Users> FindUserAsync(string username) {
             return base.Channel.FindUserAsync(username);
+        }
+        
+        public string GetUserStatus(string username) {
+            return base.Channel.GetUserStatus(username);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetUserStatusAsync(string username) {
+            return base.Channel.GetUserStatusAsync(username);
         }
     }
 }

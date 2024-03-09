@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,7 @@ namespace Service
                     {
                         while (reader.Read())
                         {
-                            return new Users { Username = reader["username"].ToString(), Password = reader["password"].ToString() };
+                            return new Users { Username = reader["username"].ToString(), Password = reader["password"].ToString(), LastSeen = DateTime.Parse(reader["last_seen"].ToString()), IsOnline = bool.Parse(reader["is_online"].ToString()) };
                         }
                     }
                 }
@@ -45,13 +46,35 @@ namespace Service
                     {
                         while (reader.Read())
                         {
-                            users.Add(new Users { Username = reader["username"].ToString(), Password = reader["password"].ToString() });
+                            users.Add(new Users { Username = reader["username"].ToString(), Password = reader["password"].ToString(), LastSeen = DateTime.Parse(reader["last_seen"].ToString()), IsOnline = bool.Parse(reader["is_online"].ToString()) });
                         }
                     }
                 }
             }
             catch (Exception e) { Console.Error.WriteLine(e.Message.ToString()); }
             return users;
+        }
+
+        public string GetUserStatus(string username)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_dbString))
+                {
+                    SqlCommand cmd = new SqlCommand("select * from users where username = @username", conn);
+                    cmd.Parameters.AddWithValue("@username", username);
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            return bool.Parse(reader["is_online"].ToString()) ? "Online" : "Last Seen " + DateTime.Parse(reader["last_seen"].ToString()).ToString("dddd, dd MMMM yyyy HH:mm");
+                        }
+                    }
+                }
+            }
+            catch (Exception e) { Console.Error.WriteLine(e.Message.ToString()); }
+            return "";
         }
 
         public string Login(string username, string password)
@@ -66,9 +89,15 @@ namespace Service
                     conn.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        if(reader.Read())
+                        if (reader.HasRows && reader.Read())
                         {
-                            response = reader["password"].ToString() == password ? "success" : "wrong password";
+                            if (reader["password"].ToString() != password) { response = "wrong password"; }
+                            reader.Close();
+                            SqlCommand updatecmd = new SqlCommand("update users set is_online=@is_online where username=@username", conn);
+                            updatecmd.Parameters.AddWithValue("@is_online", true);
+                            updatecmd.Parameters.AddWithValue("@username", username);
+                            updatecmd.ExecuteNonQuery();
+                            response = "success";
                         }
                     }
                 }
@@ -76,6 +105,24 @@ namespace Service
             catch (Exception e) { Console.Error.WriteLine(e.Message.ToString()); }
             return response;
             //throw new NotImplementedException();
+        }
+
+        public void Logout(string username)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_dbString))
+                {
+                    SqlCommand cmd = new SqlCommand("update users set last_seen=@last_seen, is_online=@is_online where username=@username", conn);
+                    cmd.Parameters.AddWithValue("@last_seen", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    cmd.Parameters.AddWithValue("@is_online", false);
+                    cmd.Parameters.AddWithValue("@username", username);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    return;
+                }
+            }
+            catch (Exception e) { Console.Error.WriteLine(e.Message.ToString()); }
         }
 
         public bool Register(string username, string password)
@@ -110,7 +157,7 @@ namespace Service
                     {
                         while (reader.Read())
                         {
-                            users.Add(new Users { Username = reader["username"].ToString(), Password = reader["password"].ToString() });
+                            users.Add(new Users { Username = reader["username"].ToString(), Password = reader["password"].ToString(), LastSeen = DateTime.Parse(reader["last_seen"].ToString()), IsOnline = bool.Parse(reader["is_online"].ToString()) });
                         }
                     }
                 }

@@ -47,6 +47,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Name = "Host";
+            this.ShowIcon = false;
             this.Text = "Host";
             this.Load += new System.EventHandler(this.Host_Load);
             this.ResumeLayout(false);

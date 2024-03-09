@@ -23,6 +23,6 @@ namespace Service
     [message_id]      INT IDENTITY(1, 1) NOT NULL,
     PRIMARY KEY CLUSTERED([message_id] ASC),
     FOREIGN KEY([receiver]) REFERENCES[dbo].[Users] ([username]),
-    FOREIGN KEY([sender]) REFERENCES[dbo].[Users] ([username])*/
-);
+    FOREIGN KEY([sender]) REFERENCES[dbo].[Users] ([username])
+    );*/
 }

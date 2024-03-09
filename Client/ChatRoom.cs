@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
+using Application = System.Windows.Forms.Application;
 
 namespace Client
 {
@@ -28,13 +30,43 @@ namespace Client
             this._worker.DoWork += RefreshChat;
         }
 
+        //private void RefreshUserStatus(object sender, DoWorkEventArgs e)
+        //{
+        //    while (true)
+        //    {
+        //        if (this.InvokeRequired)
+        //        {
+        //            Invoke(new Action(() =>
+        //            {; UpdateUserStatus(); }));
+        //            Thread.Sleep(1000 * new Random().Next(3));
+        //        }
+        //        else
+        //        {
+        //            UpdateUserStatus();
+        //        }
+        //    }
+        //}
+
+        private void UpdateUserStatus()
+        {
+            label2.Text = MySession.UsersService.GetUserStatus(_receiver);
+        }
+
         private void RefreshChat(object sender, DoWorkEventArgs e)
         {
             while (true)
             {
-                Invoke(new Action(() =>
-                LoadChat()));
-                Thread.Sleep(3000);
+                if (this.InvokeRequired)
+                {
+                    Invoke(new Action(() =>
+                    { LoadChat(); UpdateUserStatus(); }));
+                    Thread.Sleep(1000*new Random().Next(3));
+                }
+                else
+                {
+                    LoadChat();
+                    UpdateUserStatus();
+                }
             }
         }
 
@@ -88,6 +120,7 @@ namespace Client
 
         private void ChatRoom_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (MySession.Username != null && MySession.Username.Length != 0) MySession.UsersService.Logout(MySession.Username);
             Application.Exit();
         }
 
