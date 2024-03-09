@@ -22,8 +22,12 @@ namespace Host
 
         private void Host_Load(object sender, EventArgs e)
         {
-            //ServiceHost shU = new();
-
+            /* need to have access to ports 8733 and 8734
+            run command prompt or powershell in administrator mode and run command
+            $ whoami
+            abc\xyz
+            $ netsh http add urlacl url="http://+:8733/" user="abc\xyz"
+            */
             Uri httpaU = new Uri("http://localhost:8733/Services/UsersService");
             Uri httpaM = new Uri("http://localhost:8734/Services/MessagesService");
             try
