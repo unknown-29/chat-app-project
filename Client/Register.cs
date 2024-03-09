@@ -50,7 +50,10 @@ namespace Client
             bool response = MySession.UsersService.Register(username, password);
             if (response)
             {
-                new Login("user registered successfully\nyou can now login").Show();
+                new Login("user registered successfully\nyou can now login")
+                {
+                    Location = this.Location
+                }.Show();
                 this.Hide();
             }
             else
@@ -62,7 +65,10 @@ namespace Client
         // login
         private void button2_Click(object sender, EventArgs e)
         {
-            new Login().Show();
+            new Login
+            {
+                Location = this.Location
+            }.Show();
             this.Hide();
         }
     }

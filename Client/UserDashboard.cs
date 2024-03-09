@@ -21,12 +21,14 @@ namespace Client
             InitializeComponent();
             this._worker = new BackgroundWorker();
             this._worker.DoWork += RefreshUsersList;
+            this._worker.WorkerSupportsCancellation = true;
         }
 
         private void RefreshUsersList(object sender, DoWorkEventArgs e)
         {
             while (true)
             {
+                if (this._worker.CancellationPending) return;
                 if (this.InvokeRequired)
                 {
                     Invoke(new Action(() =>
@@ -50,13 +52,16 @@ namespace Client
         private void LoadUsersList()
         {
             if (textBox1.Text.Length != 0) return;
-            dataGridView1.ClearSelection();
+            //dataGridView1.;
+            int currentSelectedCell = -1; 
+            if(dataGridView1.SelectedCells.Count > 0) { currentSelectedCell= dataGridView1.Rows.IndexOf(dataGridView1.SelectedRows[0]); }
             if (MySession.Username == null || MySession.Username.Length == 0)
             {
-                new Login("please login").Show();
+                new Login("please login") { Location = this.Location }.Show();
                 this.Hide();
             }
             dataGridView1.DataSource = GetUsersList();
+            if(currentSelectedCell!=-1) dataGridView1.Rows[currentSelectedCell].Selected = true;
         }
 
         private DataTable GetUsersList()
@@ -74,6 +79,7 @@ namespace Client
 
         private void UserDashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
+            this._worker.CancelAsync();
             if (MySession.Username != null && MySession.Username.Length != 0) MySession.UsersService.Logout(MySession.Username);
             Application.Exit();
         }
@@ -86,7 +92,7 @@ namespace Client
             IEnumerable<UsersService.Users> users = MySession.UsersService.SearchUsers(textBox1.Text.ToString()).Where(user => !user.Username.Equals(MySession.Username));
             foreach (var user in users)
             {
-                dt.Rows.Add(new string[] { user.Username, user.IsOnline ? "online" : user.LastSeen.ToString("yyyy-MM-dd HH:mm:ss") });
+                dt.Rows.Add(new string[] { user.Username, user.IsOnline ? "Online" : user.LastSeen.ToString("yyyy-MM-dd HH:mm:ss") });
             }
             dataGridView1.DataSource = dt;
             //dataGridView1.Columns[0].DefaultCellStyle.Alignment=DataGridViewContentAlignment.MiddleCenter;
@@ -94,18 +100,18 @@ namespace Client
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            this._worker.CancelAsync();
             //MessageBox.Show(dataGridView1.SelectedCells[0].Value.ToString());
-            new ChatRoom(dataGridView1.SelectedCells[0].Value.ToString()).Show();
+            new ChatRoom(dataGridView1.SelectedCells[0].Value.ToString()) { Location = this.Location }.Show();
             this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //if (MySession.Username != null && MySession.Username.Length != 0)
-            //MessageBox.Show(MySession.Username);
+            this._worker.CancelAsync();
             MySession.UsersService.Logout(MySession.Username);
             MySession.Username = null;
-            new Login("logout successfully").Show();
+            new Login("logout successfully") { Location = this.Location }.Show();
             this.Hide();
         }
     }

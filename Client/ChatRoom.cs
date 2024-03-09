@@ -28,6 +28,7 @@ namespace Client
             this._receiver = receiver;
             this._worker = new BackgroundWorker();
             this._worker.DoWork += RefreshChat;
+            this._worker.WorkerSupportsCancellation = true;
         }
 
         //private void RefreshUserStatus(object sender, DoWorkEventArgs e)
@@ -56,6 +57,7 @@ namespace Client
         {
             while (true)
             {
+                //if (this._worker.CancellationPending) return;
                 if (this.InvokeRequired)
                 {
                     Invoke(new Action(() =>
@@ -76,7 +78,7 @@ namespace Client
             dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.Empty;
             if (MySession.Username == null || MySession.Username.Length == 0)
             {
-                new Login("please login").Show();
+                new Login("please login") { Location = this.Location }.Show();
                 this.Hide();
             }
             label1.Text = _receiver;
@@ -114,12 +116,14 @@ namespace Client
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new UserDashboard().Show();
+            this._worker.CancelAsync();
+            new UserDashboard() { Location = this.Location }.Show();
             this.Hide();
         }
 
         private void ChatRoom_FormClosing(object sender, FormClosingEventArgs e)
         {
+            this._worker.CancelAsync();
             if (MySession.Username != null && MySession.Username.Length != 0) MySession.UsersService.Logout(MySession.Username);
             Application.Exit();
         }

@@ -59,7 +59,10 @@ namespace Client
             {
                 case "success":
                     MySession.Username = username;
-                    new UserDashboard().Show();
+                    new UserDashboard
+                    {
+                        Location = this.Location
+                    }.Show();
                     this.Hide();
                     break;
                 case "username not found":
@@ -73,7 +76,10 @@ namespace Client
         //register
         private void button2_Click(object sender, EventArgs e)
         {
-            new Register().Show();
+            new Register
+            {
+                Location = this.Location
+            }.Show();
             this.Hide();
         }
     }

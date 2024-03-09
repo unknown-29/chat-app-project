@@ -123,7 +123,7 @@
             this.Name = "ChatRoom";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Chat Room";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChatRoom_FormClosing);
             this.Load += new System.EventHandler(this.ChatRoom_Load);
