@@ -11,3 +11,17 @@ C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Client\obj\Debug\Client.pdb
 C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Client\obj\Debug\Client.Register.resources
 C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Client\obj\Debug\Client.UserDashboard.resources
 C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Client\obj\Debug\Client.ChatRoom.resources
+D:\chat-app-project\Client\bin\Debug\Client.exe.config
+D:\chat-app-project\Client\bin\Debug\Client.exe
+D:\chat-app-project\Client\bin\Debug\Client.pdb
+D:\chat-app-project\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+D:\chat-app-project\Client\obj\Debug\Client.csproj.SuggestedBindingRedirects.cache
+D:\chat-app-project\Client\obj\Debug\Client.ChatRoom.resources
+D:\chat-app-project\Client\obj\Debug\Client.Login.resources
+D:\chat-app-project\Client\obj\Debug\Client.Properties.Resources.resources
+D:\chat-app-project\Client\obj\Debug\Client.Register.resources
+D:\chat-app-project\Client\obj\Debug\Client.UserDashboard.resources
+D:\chat-app-project\Client\obj\Debug\Client.csproj.GenerateResource.cache
+D:\chat-app-project\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+D:\chat-app-project\Client\obj\Debug\Client.exe
+D:\chat-app-project\Client\obj\Debug\Client.pdb

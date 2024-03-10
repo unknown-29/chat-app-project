@@ -5,3 +5,10 @@ C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Service\obj\Debug\Service.cspr
 C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Service\obj\Debug\Service.dll
 C:\Users\Lenovo\Desktop\chat-app\chat-app-project\Service\obj\Debug\Service.pdb
+D:\chat-app-project\Service\bin\Debug\Service.dll.config
+D:\chat-app-project\Service\bin\Debug\Service.dll
+D:\chat-app-project\Service\bin\Debug\Service.pdb
+D:\chat-app-project\Service\obj\Debug\Service.csproj.AssemblyReference.cache
+D:\chat-app-project\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+D:\chat-app-project\Service\obj\Debug\Service.dll
+D:\chat-app-project\Service\obj\Debug\Service.pdb
