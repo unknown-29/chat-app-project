@@ -10,6 +10,7 @@ using System.ServiceModel.Description;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
 
 namespace Host
 {
@@ -28,24 +29,27 @@ namespace Host
             abc\xyz
             $ netsh http add urlacl url="http://+:8733/" user="abc\xyz"
             */
-            Uri httpaU = new Uri("http://localhost:8733/Services/UsersService");
-            Uri httpaM = new Uri("http://localhost:8734/Services/MessagesService");
+            //Uri httpaU = new Uri("http://localhost:8733/Services/UsersService");
+            //Uri httpaM = new Uri("http://localhost:8734/Services/MessagesService");
             try
             {
-                ServiceHost shU = new ServiceHost(typeof(UsersService), httpaU);
-                ServiceHost shM = new ServiceHost(typeof(MessagesService), httpaM);
-                
-                WSHttpBinding httpbU = new WSHttpBinding();
-                WSHttpBinding httpbM = new WSHttpBinding();
-                
-                shU.Description.Behaviors.Add(new ServiceMetadataBehavior());
-                shM.Description.Behaviors.Add(new ServiceMetadataBehavior());
-                
-                shU.AddServiceEndpoint(typeof(IMetadataExchange), MetadataExchangeBindings.CreateMexHttpBinding(), "mex");
-                shM.AddServiceEndpoint(typeof(IMetadataExchange), MetadataExchangeBindings.CreateMexHttpBinding(), "mex");
-                
-                shU.AddServiceEndpoint(typeof(IUsersService), httpbU, httpaU);
-                shM.AddServiceEndpoint(typeof(IMessagesService), httpbM, httpaM);
+                //ServiceHost shU = new ServiceHost(typeof(UsersService), httpaU);
+                //ServiceHost shM = new ServiceHost(typeof(MessagesService), httpaM);
+
+                //WSHttpBinding httpbU = new WSHttpBinding();
+                //WSHttpBinding httpbM = new WSHttpBinding();
+
+                //shU.Description.Behaviors.Add(new ServiceMetadataBehavior());
+                //shM.Description.Behaviors.Add(new ServiceMetadataBehavior());
+
+                //shU.AddServiceEndpoint(typeof(IMetadataExchange), MetadataExchangeBindings.CreateMexHttpBinding(), "mex");
+                //shM.AddServiceEndpoint(typeof(IMetadataExchange), MetadataExchangeBindings.CreateMexHttpBinding(), "mex");
+
+                //shU.AddServiceEndpoint(typeof(IUsersService), httpbU, httpaU);
+                //shM.AddServiceEndpoint(typeof(IMessagesService), httpbM, httpaM);
+
+                ServiceHost shU = new ServiceHost(typeof(UsersService));
+                ServiceHost shM = new ServiceHost(typeof(MessagesService));
 
                 shU.Open();
                 shM.Open();

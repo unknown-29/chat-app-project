@@ -109,29 +109,29 @@
     <None Include="Connected Services\MessagesService\Client.MessagesService.Messages.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MessagesService\service.wsdl" />
-    <None Include="Connected Services\MessagesService\service.xsd">
+    <None Include="Connected Services\MessagesService\item.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\MessagesService\service1.xsd">
+    <None Include="Connected Services\MessagesService\item1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\MessagesService\Service2.xsd">
+    <None Include="Connected Services\MessagesService\item2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\MessagesService\MessagesService.wsdl" />
     <None Include="Connected Services\UsersService\Client.UsersService.Users.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\UsersService\service.wsdl" />
-    <None Include="Connected Services\UsersService\service.xsd">
+    <None Include="Connected Services\UsersService\item.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\UsersService\service1.xsd">
+    <None Include="Connected Services\UsersService\item1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\UsersService\Service2.xsd">
+    <None Include="Connected Services\UsersService\item2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\UsersService\UsersService.wsdl" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -153,6 +153,9 @@
     <WCFMetadataStorage Include="Connected Services\UsersService\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\UsersService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Connected Services\UsersService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +166,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MessagesService\item.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\MessagesService\configuration91.svcinfo" />

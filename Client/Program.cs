@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Client
 {
@@ -20,7 +21,13 @@ namespace Client
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            if (File.Exists(MySession.SessionFilePath))
+            {
+                string line = File.ReadAllLines(MySession.SessionFilePath)[0];
+                MySession.Username = line.Split('=')[1];
+                Application.Run(new UserDashboard());
+            }
+            else Application.Run(new Login());
         }
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();

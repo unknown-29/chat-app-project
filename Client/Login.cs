@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Client
 {
@@ -59,6 +60,10 @@ namespace Client
             {
                 case "success":
                     MySession.Username = username;
+                    using(StreamWriter sw = new FileInfo(MySession.SessionFilePath).CreateText())
+                    {
+                        sw.WriteLine("username={0}", MySession.Username);
+                    }
                     new UserDashboard
                     {
                         Location = this.Location

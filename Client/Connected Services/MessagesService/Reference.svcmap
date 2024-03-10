@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="27b32a94-17be-4fde-9370-02c210ca16b0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="bcf91d88-6713-4331-ae4a-9c722cc34466" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,13 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8734/Services/MessagesService/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://192.168.228.23:8734/Service/MessagesService/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="b94be86e-499a-4770-9125-d7959313e7de" SourceId="1" SourceUrl="http://localhost:8734/Services/MessagesService/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="57f16e0d-50bd-4303-a61d-4504233b7026" SourceId="1" SourceUrl="http://localhost:8734/Services/MessagesService/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="102b4eaa-5bf8-40f2-8c7e-9fa9201155b1" SourceId="1" SourceUrl="http://localhost:8734/Services/MessagesService/mex" />
-    <MetadataFile FileName="Service2.xsd" MetadataType="Schema" ID="26b0620d-6f7a-49f6-8764-80a040fa25be" SourceId="1" SourceUrl="http://localhost:8734/Services/MessagesService/mex" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="5ce9b399-3fc0-4178-b656-3389ee6d25ad" SourceId="1" SourceUrl="http://192.168.228.23:8734/Service/MessagesService/?xsd=xsd0" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="286eac96-8639-46ad-8176-2a2ab2fc8d15" SourceId="1" SourceUrl="http://192.168.228.23:8734/Service/MessagesService/?disco" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="d56acf96-457b-48e8-b920-0be9e08e3e64" SourceId="1" SourceUrl="http://192.168.228.23:8734/Service/MessagesService/?xsd=xsd2" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="8acc7b75-9636-4ec6-8c9e-e7b19905558f" SourceId="1" SourceUrl="http://192.168.228.23:8734/Service/MessagesService/?xsd=xsd1" />
+    <MetadataFile FileName="MessagesService.wsdl" MetadataType="Wsdl" ID="6bba0c9e-aeb2-43b6-b11c-84bbf79ac676" SourceId="1" SourceUrl="http://192.168.228.23:8734/Service/MessagesService/?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
