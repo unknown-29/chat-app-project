@@ -91,7 +91,10 @@ namespace Service
                     {
                         if (reader.HasRows && reader.Read())
                         {
-                            if (reader["password"].ToString() != password) { response = "wrong password"; }
+                            if (reader["password"].ToString() != password) { 
+                                response = "wrong password";
+                                return response;
+                            }
                             reader.Close();
                             SqlCommand updatecmd = new SqlCommand("update users set is_online=@is_online where username=@username", conn);
                             updatecmd.Parameters.AddWithValue("@is_online", true);
