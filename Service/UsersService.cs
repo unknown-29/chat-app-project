@@ -10,7 +10,7 @@ namespace Service
 {
     public class UsersService : IUsersService
     {
-        private readonly string _dbString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=chatdb;Integrated Security=True;Connect Timeout=30";
+        private readonly string _dbString = @"Data Source=192.168.228.23;Initial Catalog=chatdb;Integrated Security=True;Connect Timeout=30";
         public Users FindUser(string username)
         {
             try
@@ -75,6 +75,30 @@ namespace Service
             }
             catch (Exception e) { Console.Error.WriteLine(e.Message.ToString()); }
             return "";
+        }
+
+        public void SetUserOnline(string username)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_dbString))
+                {
+                    SqlCommand cmd = new SqlCommand("update users set is_online=@is_online where username=@username", conn);
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@is_online", true);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    //using (SqlDataReader reader = cmd.ExecuteReader())
+                    //{
+                    //    while (reader.Read())
+                    //    {
+                    //        return bool.Parse(reader["is_online"].ToString()) ? "Online" : "Last Seen " + DateTime.Parse(reader["last_seen"].ToString()).ToString("dddd, dd MMMM yyyy HH:mm");
+                    //    }
+                    //}
+                }
+            }
+            catch (Exception e) { Console.Error.WriteLine(e.Message.ToString()); }
         }
 
         public string Login(string username, string password)

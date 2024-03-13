@@ -151,6 +151,12 @@ namespace Client.UsersService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/GetUserStatus", ReplyAction="http://tempuri.org/IUsersService/GetUserStatusResponse")]
         System.Threading.Tasks.Task<string> GetUserStatusAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/SetUserOnline", ReplyAction="http://tempuri.org/IUsersService/SetUserOnlineResponse")]
+        void SetUserOnline(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/SetUserOnline", ReplyAction="http://tempuri.org/IUsersService/SetUserOnlineResponse")]
+        System.Threading.Tasks.Task SetUserOnlineAsync(string username);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -234,6 +240,14 @@ namespace Client.UsersService {
         
         public System.Threading.Tasks.Task<string> GetUserStatusAsync(string username) {
             return base.Channel.GetUserStatusAsync(username);
+        }
+        
+        public void SetUserOnline(string username) {
+            base.Channel.SetUserOnline(username);
+        }
+        
+        public System.Threading.Tasks.Task SetUserOnlineAsync(string username) {
+            return base.Channel.SetUserOnlineAsync(username);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Service
 {
     public class MessagesService : IMessagesService
     {
-        private readonly string _dbString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=chatdb;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+        private readonly string _dbString = @"Data Source=192.168.228.23;Initial Catalog=chatdb;Integrated Security=True;Connect Timeout=30";
         public IEnumerable<Messages> GetChat(string user1, string user2)
         {
             List<Messages> chat=new List<Messages>();

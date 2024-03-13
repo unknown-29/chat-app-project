@@ -17,5 +17,6 @@ namespace Service
         [OperationContract] IEnumerable<Users> SearchUsers(string username);
         [OperationContract] Users FindUser(string username);
         [OperationContract] string GetUserStatus(string username);
+        [OperationContract] void SetUserOnline(string username);
     }
 }

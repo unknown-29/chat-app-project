@@ -20,7 +20,7 @@ namespace Service
      CREATE TABLE [dbo].[Users] (
     [username]  VARCHAR (50) NOT NULL,
     [password]  VARCHAR (50) NOT NULL,
-    [last_seen] DATETIME     NULL,
+    [last_seen] DATETIME     NOT NULL DEFAULT GETDATE(),
     [is_online] BIT          DEFAULT ((0)) NOT NULL,
     PRIMARY KEY CLUSTERED ([username] ASC)
     );

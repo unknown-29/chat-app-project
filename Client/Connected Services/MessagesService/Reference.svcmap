@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="bcf91d88-6713-4331-ae4a-9c722cc34466" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="81b6788f-8ef3-4877-986f-46713208f0d4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://192.168.228.23:8734/Service/MessagesService/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="5ce9b399-3fc0-4178-b656-3389ee6d25ad" SourceId="1" SourceUrl="http://192.168.228.23:8734/Service/MessagesService/?xsd=xsd0" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="286eac96-8639-46ad-8176-2a2ab2fc8d15" SourceId="1" SourceUrl="http://192.168.228.23:8734/Service/MessagesService/?disco" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="d56acf96-457b-48e8-b920-0be9e08e3e64" SourceId="1" SourceUrl="http://192.168.228.23:8734/Service/MessagesService/?xsd=xsd2" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="8acc7b75-9636-4ec6-8c9e-e7b19905558f" SourceId="1" SourceUrl="http://192.168.228.23:8734/Service/MessagesService/?xsd=xsd1" />
-    <MetadataFile FileName="MessagesService.wsdl" MetadataType="Wsdl" ID="6bba0c9e-aeb2-43b6-b11c-84bbf79ac676" SourceId="1" SourceUrl="http://192.168.228.23:8734/Service/MessagesService/?wsdl" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="b2f76113-fa44-40d4-818b-5c487010fe24" SourceId="1" SourceUrl="http://192.168.228.23:8734/Service/MessagesService/?xsd=xsd0" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="cf415a8b-7275-4565-bcd2-bda8214ac8ba" SourceId="1" SourceUrl="http://192.168.228.23:8734/Service/MessagesService/?disco" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="45436593-5f70-40c9-a1fe-b89330b09354" SourceId="1" SourceUrl="http://192.168.228.23:8734/Service/MessagesService/?xsd=xsd2" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="b20016cf-dfcb-4fdb-8c99-bc79de0e2574" SourceId="1" SourceUrl="http://192.168.228.23:8734/Service/MessagesService/?xsd=xsd1" />
+    <MetadataFile FileName="MessagesService.wsdl" MetadataType="Wsdl" ID="f0788d0d-f1f9-4bd3-a9cc-09117d81f395" SourceId="1" SourceUrl="http://192.168.228.23:8734/Service/MessagesService/?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

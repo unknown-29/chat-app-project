@@ -25,6 +25,7 @@ namespace Client
             {
                 string line = File.ReadAllLines(MySession.SessionFilePath)[0];
                 MySession.Username = line.Split('=')[1];
+                MySession.UsersService.SetUserOnline(MySession.Username);
                 Application.Run(new UserDashboard());
             }
             else Application.Run(new Login());
